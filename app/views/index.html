@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/display.css" rel="stylesheet">
+
+   <title>VideoSync Tool</title>
+</head>
+<body>
+    <script type="text/javascript">
+    	localStorage.clear();
+    </script>
+  <header>
+    <div id="title"><h1>Synchro in the Wild</h1></div>
+	<div id="logo"><img src="css/img/logo.png" alt="logo"></div>
+  </header>
+
+<div id="sections">
+  <section>
+    <td1>
+    <div class="g_video">
+      <h2>Glasses Video</h2>
+      <input class="g-upload-btn" id="g-upload-input" type="file" name="Gvideo" accept=".mp4"></br>
+    </div>
+  </td>
+  <td>
+    <div class="l_video">
+      <h2>Left Video</h2>
+      <input class="l-upload-btn" id="l-upload-input" type="file" name="Lvideo" accept=".mp4"></br>
+    </div>
+  </td>
+  <td>
+    <div class="r_video">
+      <h2>Right Video</h2>
+      <input class="r-upload-btn" id="r-upload-input" type="file" name="Rvideo" accept=".mp4"></br>
+    </div>
+  </td>
+
+  </section>
+
+ <section>
+ <div id="help">
+ 	How to synchronize the three videos :</br>
+ 	<ol>
+ 		<li>Upload tobii glasses, left GoPro and right GoPro videos</li>
+ 		<li>Press "start videos" to begin</li>
+ 		<li>Select a synchronization point for each video (ex: contact point)</li>
+ 		<li>Save the data as XML file</li>
+ 	</ol>
+ </div>
+	<div id="tobii"><img src="css/img/tobii2.JPG" alt="tobii"><img src="css/img/logo_tobii.png" alt="tobiilogo"></div>
+	<div id="gopro"><img src="css/img/gopro.jpg" alt="gp"><img src="css/img/gopro_logo.png" alt="goprologo"></div>
+ </section>
+</div>
+  <div id="home_footer">
+      <button id="synchro" onclick="location.href='/synchro';">Start videos</button>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="javascript/upload.js"></script>
+</body>
+</html>

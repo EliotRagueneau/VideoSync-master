@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf8">
+	<title>VideoPlayer</title>
+	<script type="text/javascript" src="javascript/controls.js"></script>
+	<link rel="stylesheet" href="css/display.css">
+</head>
+
+<body>
+
+<header>
+	<div id="title"><h1>Preview</h1></div>
+	<div id="logo"><img src="css/img/logo.png" alt="logo"></div>
+</header>
+
+<div id="sections">
+<section>
+	<video id="videoT">
+		<source src="" type="video/mp4">
+	</video>
+</section>
+
+<section><!--  GoPro -->
+	<video id="videoGP">
+		<source src="" type="video/mp4">
+	</video>
+</section>
+
+<script type="text/javascript">
+	var videoT = document.getElementById("videoT");
+	videoT.src = 'uploads/' + localStorage.getItem('GvideoTag');
+
+	var videoGP = document.getElementById("videoGP");
+	videoGP.src = 'uploads/' + localStorage.getItem('LvideoTag');
+
+	//updates the current frame counter
+	videoT.ontimeupdate = function(){
+			document.getElementById("current_frame_T").innerHTML = Math.round(videoT.currentTime/localStorage.getItem('frameTimeT'));
+			if((videoT.paused && videoT.currentTime==videoT.duration) || (videoGP.paused && videoGp.currentTime==videoGP.duration)){ //stop videos if one has ended
+				preview_stop();
+			}
+	};
+
+</script>
+<div id="preview_controls">
+	<div id="general_controls">
+		<button id="play" onclick="preview_play();;"></button>
+		<button id="pause" onclick="pause(1);pause(2);"></button>
+		<button id="stop" onclick="preview_stop();"></button>
+		<button id="previous" onclick="previous_frame(3);"></button>
+		<button id="next" onclick="next_frame(3);"></button>
+		Frame : <span id="current_frame_T">0</span>
+	</div>
+</div>
+
+</div>
+
+<footer>
+	<button id="back_home" onclick="reset();">Home</button>
+	<button id="save" onclick="save(); location.href = '/synchro';">Save</button>
+	<button id="cancel" onclick="location.href = '/synchro';">Cancel</button>
+</footer>
+
+
+</body>
+</html>

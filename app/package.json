@@ -1,0 +1,18 @@
+{
+  "name": "VideoSync",
+  "description": "An application to synchonize videos",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "formidable": "^1.0.17",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "repository": {
+    "private": true
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "ws": "3.3.2"
+  }
+}

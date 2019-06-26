@@ -1,0 +1,229 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body{
+	background-color : rgb(239, 239, 245);
+	font-family : Arial;
+	color: black;
+	font-size: 20px;
+	width: 90v;
+	height: 90h;
+    vertical-align: middle;
+}
+
+.wrapper {
+    overflow: auto;
+    margin: auto;
+    width: 960px;
+}
+
+#sections{
+	display :flex;
+	flex-direction : row;
+	flex-wrap : wrap;
+	justify-content: flex-around;
+	justify-content : center;
+
+}
+
+section{
+	width : 45%;
+	height : 55%;
+	margin : 10px;
+	display :flex;
+	flex-direction: column;
+	min-width : 800px;
+	align-items: space-around;
+
+}
+
+header{
+	display:flex;
+	justify-content:space-between;
+}
+
+#logo img{
+	width : 510px;
+	height : 100px;
+	border : solid rgb(100,100,100);
+
+}
+
+#tobii img, #gopro img{
+	width : 200px;
+	height : 200px;
+	margin-right : 20px;
+}
+
+
+footer{
+	display:flex;
+	justify-content : center;
+}
+
+#home_start{
+	margin-left : 10%;
+}
+
+#controls{
+	align-items : flex-start;
+}
+
+#general_controls{
+	display : flex;
+	border-style : solid;
+	border-color : rgb(100,100,100);
+	align-items : center;
+}
+#sync_controls{
+	display : flex;
+
+	justify-content : center;
+	align-items : center;
+	font-size : 20px;
+}
+#preview_controls{
+	align-items : flex-start;
+	width : 100%;
+
+}
+
+
+
+video{
+	width : 100%;
+	height : 100%;
+}
+
+button{
+	height: 45px;
+	width: 60px;
+	padding: 0;
+	margin: 5px;
+	border-style : none;
+	background : transparent;
+	font-size : 15px;
+	font-weight : Bold;
+
+}
+
+
+footer button, #home_footer button, #sync_controls button{
+	height: 40px;
+	width: 80px;
+	margin: 2px;
+	margin-top : 5px;
+
+	border:none;
+	padding:6px 0 6px 0;
+	border-radius:2px;
+	box-shadow:2px 2px 5px #000;
+	background:rgb(200,200,200);
+	font:bold 13px Arial;
+	color:#444;
+
+}
+
+
+
+#play{
+	background-image : url("button/play.png");
+	background-size: 100% 100%;
+
+}
+
+#pause{
+	background-image : url("button/pause.png");
+	background-size: 100% 100%;
+
+}
+
+#stop{
+	background-image : url("button/stop.png");
+	background-size: 100% 100%;
+}
+
+#next{
+	background-image : url("button/next.png");
+	background-size: 100% 100%;
+
+}
+
+#previous{
+	background-image : url("button/previous.png");
+	background-size: 100% 100%;
+
+}
+
+
+#slidebar_T{
+	flex :1;
+	margin : 8px;
+}
+#slidebar_GP{
+	flex :1;
+	margin : 8px;
+}
+
+.btn:focus, .r-upload-btn:focus, .l-upload-btn:focus, .g-upload-btn:focus, .ffmpeg-btn:focus{
+  outline: 0 !important;
+}
+
+.g-upload-btn,
+.l-upload-btn,
+.r-upload-btn {
+    border: transparent;
+	padding: 10px;
+	color: black;
+	font-family: Arial;
+	width: 400px;
+}
+
+.ffmpeg-btn {
+  color: #ffffff;
+  border: solid;
+	border-color:black;
+	width: 80px;
+}
+
+h1 {
+	font-family: Arial;
+	font-size: 40px;
+  color: black;
+
+}
+
+
+h2 {
+	font-family: Arial;
+	font-size: 30px;
+  	color: black;
+}
+
+#r-upload-input {
+}
+
+#l-upload-input {
+}
+
+#g-upload-input {
+  display: inline-table;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 450px;
+  }
+}
