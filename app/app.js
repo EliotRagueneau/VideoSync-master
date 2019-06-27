@@ -21,10 +21,9 @@ app.get('/', function (req, res) {
 });
 
 app.get('/synchro', function (req, res) {
-    let Gvideo, Rvideo, Lvideo, Name;
+    let Gvideo, Rvideo, Lvideo;
     let files = fs.readdirSync(path.join(__dirname, 'public/uploads/'));
     for (let file of files) {
-        let ext = path.extname(file);
         let patt = new RegExp("Gvideo");
         if (patt.test(file)) {
             Gvideo = file;
@@ -37,19 +36,15 @@ app.get('/synchro', function (req, res) {
         if (patt.test(file)) {
             Lvideo = file;
         }
-        ext = path.extname(file);
-        if (ext !== '.mp4') {
-            Name = file;
-        }
+
     }
 
-    let GvideoPath = path.join(__dirname, 'public/uploads/' + Gvideo);
-    let LvideoPath = path.join(__dirname, 'public/uploads/' + Lvideo);
-    let RvideoPath = path.join(__dirname, 'public/uploads/' + Rvideo);
-    let NamevideoPath = path.join(__dirname, 'public/uploads/' + Name);
+    let GvideoPath = path.join(__dirname, './public/uploads/' + Gvideo);
+    let LvideoPath = path.join(__dirname, './public/uploads/' + Lvideo);
+    let RvideoPath = path.join(__dirname, './public/uploads/' + Rvideo);
 
     const spawn = require('child_process').spawn;
-    const shinfo = spawn('sh', ['info.sh', RvideoPath, LvideoPath, GvideoPath, NamevideoPath]);
+    const shinfo = spawn('sh', ['info.sh', RvideoPath, LvideoPath, GvideoPath]);
 
     let currentTime = new Date().getTime();
     while (currentTime + 200 >= new Date().getTime()) {
@@ -92,6 +87,6 @@ app.post('/upload', function (req, res) {
     delete form;
 });
 
-let server = app.listen(3001, function () {
-    console.log('Server listening on port 3000');
+let server = app.listen(3069, function () {
+    console.log('Server listening on port 3069');
 });

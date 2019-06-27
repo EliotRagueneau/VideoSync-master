@@ -1,3 +1,3 @@
 #!/bin/bash
 
-nodejs app.js & firefox localhost:3000
+nodejs app.js & firefox localhost:3069

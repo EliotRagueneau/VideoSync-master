@@ -2,7 +2,7 @@
 
 make
 
-if [ "$#" -ne 4 ]; then
+if [[ "$#" -ne 4 ]]; then
  echo "Usage : ./info.sh <R video file> <L video file> <G video file> <G video name>"
 
 else
@@ -13,10 +13,10 @@ else
   #rm -rf public/data.xml
   touch public/data.xml
 
-  if [ -f $4 ]
-    then
+#  if [[ -f $4 ]]
+#    then
       ./parser Rtimecode.txt Ltimecode.txt Gtimecode.txt $4
-      rm $4
-    fi
+#      rm $4
+#    fi
 fi
 make clean

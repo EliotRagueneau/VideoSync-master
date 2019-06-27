@@ -183,7 +183,7 @@ function get_start_end_frames() {
 function loadXML() {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (this.readyState === = 4 && this.status === = 200) {
+        if (this.readyState === 4 && this.status === 200) {
             readXML(this);
         }
         console.log("ReadingXML...");
@@ -216,14 +216,15 @@ function save() {
     let frameRateGP = 1 / localStorage.getItem('frameTimeGP');
 
     let delayRL = parseInt(localStorage.getItem('delayRL'));
+    let start_frame_G, start_frame_L, start_frame_R;
     if (delayRL < 0) { //case where the delay between the two gopro videos is negative, we couldn't begin video_R before 0
-        let start_frame_G = parseInt(localStorage.getItem('start_frame_T')) - delayRL;
-        let start_frame_L = parseInt(localStorage.getItem('start_frame_GP')) - delayRL;
-        let start_frame_R = parseInt(localStorage.getItem('start_frame_GP'));
+        start_frame_G = parseInt(localStorage.getItem('start_frame_T')) - delayRL;
+        start_frame_L = parseInt(localStorage.getItem('start_frame_GP')) - delayRL;
+        start_frame_R = parseInt(localStorage.getItem('start_frame_GP'));
     } else {
-        let start_frame_G = localStorage.getItem('start_frame_T');
-        let start_frame_L = localStorage.getItem('start_frame_GP');
-        let start_frame_R = parseInt(localStorage.getItem('start_frame_GP')) + delayRL;
+        start_frame_G = localStorage.getItem('start_frame_T');
+        start_frame_L = localStorage.getItem('start_frame_GP');
+        start_frame_R = parseInt(localStorage.getItem('start_frame_GP')) + delayRL;
     }
 
     let synch_frame_R = parseInt(localStorage.getItem('sync_frame_GP')) + delayRL;

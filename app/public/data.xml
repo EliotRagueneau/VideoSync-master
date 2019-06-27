@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <current_observation>
-<videoName></videoName>
-<duration_g></duration_g>
+<videoName>0011_Confiture</videoName>
+<duration_g>00:00:09.08</duration_g>
 <timecode_g></timecode_g>
-<frameRate_g>0.000000</frameRate_g>
-<duration_r></duration_r>
-<timecode_r></timecode_r>
-<frameRate_r>0.000000</frameRate_r>
-<duration_l></duration_l>
-<timecode_l></timecode_l>
-<frameRate_l>0.000000</frameRate_l>
-<delayRL>0</delayRL>
+<frameRate_g>25.120001</frameRate_g>
+<duration_r>00:00:08.54</duration_r>
+<timecode_r>03:39:43:59</timecode_r>
+<frameRate_r>59.939999</frameRate_r>
+<duration_l>00:00:08.56</duration_l>
+<timecode_l>03:39:43:12</timecode_l>
+<frameRate_l>59.939999</frameRate_l>
+<delayRL>47</delayRL>
 </current_observation>
