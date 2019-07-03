@@ -76,7 +76,7 @@
 <!-- Save button section  -->
 <footer>
     <button id="back_home" onclick="reset();">Home</button>
-    <button id="save" onclick="save();">Save</button>
+    <button id="save" onclick="save(); localStorage.clear(); location.href='/';">Save</button>
     <button id="preview" onclick=" location.href='/preview';">Preview</button>
 </footer>
 
@@ -84,6 +84,7 @@
 
 
 <script type="text/javascript">
+set_sync_frames();
     var videoT = document.getElementById("videoT");
     videoT.src = 'uploads/' + localStorage.getItem('GvideoTag');
     videoT.load();
@@ -92,10 +93,13 @@
         document.getElementById("current_frame_T").innerHTML = Math.round(videoT.currentTime / localStorage.getItem('frameTimeT'));
         document.getElementById("slidebar_T").value = Math.round(videoT.currentTime / videoT.duration * 100);
     };
-    get_sync_frame(1);
+    // get_sync_frame(1);
+    go_to_sync_frame(1);
+    update_frame(1);
 </script>
 
 <script type="text/javascript">
+set_sync_frames();
     var videoGP = document.getElementById("videoGoPro");
     videoGP.src = 'uploads/' + localStorage.getItem('LvideoTag');
     videoGP.load();
@@ -105,7 +109,8 @@
         document.getElementById("current_frame_GP").innerHTML = Math.round(videoGP.currentTime / localStorage.getItem('frameTimeGP'));
         document.getElementById("slidebar_GP").value = Math.round(videoGP.currentTime / videoGP.duration * 100);
     };
-    get_sync_frame(2);
+    // get_sync_frame(2);
+    go_to_sync_frame(2);
 </script>
 
 

@@ -260,6 +260,4 @@ function save() {
     pom.click();
 
     document.body.removeChild(pom);
-
-
 }
